@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram feed</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand bg-body-tertiary">
+            <!-- ícono y texto instagram -->
+            <div class="container-fluid">
+                <a class="navbar-brand d-flex align-items-center" href="#">
+                    <i class="fa-brands fa-instagram me-2"></i>
+                    <!-- con el me-2 añado espacio a la derecha del icono -->
+                    Instagram
+                </a>
+
+                <!-- Botones a la derecha con ms-auto (margin: start, o sea, empuja a la izquierda)-->
+                <div class="d-flex align-items-center ms-auto">
+                    <!-- New post -->
+                    <button type="button" class="btn btn-success btn-sm text-nowrap me-2" data-bs-toggle="modal"
+                        data-bs-target="#crearPost">Create a new post</button>
+                    <!-- Con me-2 agrego espacio a la derecha del primer botón -->
+                    <!-- Dropdown -->
+                    <div class="nav-item dropdown">
+                        <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            <i class="fa-solid fa-gear"></i>
+                        </button>
+
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <!-- Con lo último hago que el menú que se desplega aparezca para la izquierda -->
+                            <li><a class="dropdown-item" href="#">Profile</a></li>
+                            <li><a class="dropdown-item" href="#">Accessibility</a></li>
+                            <li><a class="dropdown-item" href="#">Privacy and data</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Log out</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div> <!-- del container fluid-->
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="crearPost" tabindex="-1" aria-labelledby="nuevoPost" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="nuevoPost">Create a new post</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <div class="modal-body">
+                    <!-- Caja de texto -->
+                    <div class="mb-3">
+                        <label for="postCaption class=" form-label">Caption:</label>
+                        <textarea class="form-control" id="postCaption" rows="3"
+                            placeholder="Add the caption of your post here"></textarea>
+                    </div>
+                    <button type="button" class="btn btn-light btn-sm">
+                        <i class="fa-solid fa-camera"></i>
+                    </button>
+                    <button type="button" class="btn btn-light btn-sm">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </button>
+                </div>
+                <!-- Close y publish -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-success">Publish</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container-fluid">
+        <!-- Navbar de las opciones de grid -->
+        <nav class="nav justify-content-center">
+            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home"
+                    type="button" role="tab" aria-controls="nav-home" aria-selected="true">
+                    <i class="fa-solid fa-table-cells"></i>
+                </button>
+                <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile"
+                    type="button" role="tab" aria-controls="nav-profile" aria-selected="false">
+                    <i class="fa-solid fa-square"></i>
+                </button>
+            </div>
+        </nav>
+        <div class="tab-content" id="nav-tabContent">
+            <!-- Grid de a 3 -->
+            <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab"
+                tabindex="0">
+                <div class="row">
+                    <div class="col-4 p-1"><img style="object-fit: cover; height: 30vw;" src="https://media.gettyimages.com/id/1780329490/es/foto/buenos-aires-argentina-editorial-use-only-no-covers-taylor-swift-performs-onstage-during.jpg?s=1024x1024&w=gi&k=20&c=iQLf1DefCbPRmIkbb8ASnRj4fzk8ofB7Aobo_USAGF4=" class="img-fluid w-100" alt="">
+                    </div>
+                    <!--el img-fluid es para hacerlo responsive-->
+                    <div class="col-4 p-1"><img style="object-fit: cover; height: 30vw;" src="https://media.gettyimages.com/id/1788344633/es/foto/buenos-aires-argentina-editorial-use-only-no-book-covers-taylor-swift-performs-onstage-during.jpg?s=1024x1024&w=gi&k=20&c=0CCjZpwz3B2tPfJ6HI6jkUfLTqJSIZ0qBT_IouqMOoQ=" class="img-fluid w-100" alt="">
+                    </div>
+                    <div class="col-4 p-1"><img style="object-fit: cover; height: 30vw;" src="https://media.gettyimages.com/id/1784940768/es/foto/buenos-aires-argentina-editorial-use-only-no-book-covers-taylor-swift-performs-onstage-during.jpg?s=2048x2048&w=gi&k=20&c=8At96FSc8g-nbKt2VWQ2EBTXExOZcp1f3fVNKA02E9k=" class="img-fluid w-100" alt="">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-4 p-1"><img style="object-fit: cover; height: 30vw;" src="https://media.gettyimages.com/id/1784870974/es/foto/buenos-aires-argentina-editorial-use-only-no-book-covers-taylor-swift-performs-onstage-during.jpg?s=1024x1024&w=gi&k=20&c=hkkoYMGsR_8BQNqPTK1G6BJaVp9NecCgdBoPjMFGc-Y=" class="img-fluid w-100" alt="">
+                    </div>
+                    <div class="col-4 p-1"><img style="object-fit: cover; height: 30vw;" src="https://media.gettyimages.com/id/1784870894/es/foto/buenos-aires-argentina-editorial-use-only-no-book-covers-taylor-swift-performs-onstage-during.jpg?s=1024x1024&w=gi&k=20&c=eZKcp0bCKf4JXTG__wWjFxFZToyVlPK3p66q8QhaJdY=" class="img-fluid w-100" alt="">
+                    </div>
+                    <div class="col-4 p-1"><img style="object-fit: cover; height: 30vw;" src="https://media.gettyimages.com/id/1784852470/es/foto/buenos-aires-argentina-editorial-use-only-no-book-covers-taylor-swift-performs-onstage-during.jpg?s=1024x1024&w=gi&k=20&c=EKremYS79eTsjlJdeoRiWfPwJcIELtTdRtLoHLRBLEQ=" class="img-fluid w-100" alt="">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-4 p-1"><img style="object-fit: cover; height: 30vw;" src="https://media.gettyimages.com/id/1784991432/es/foto/buenos-aires-argentina-editorial-use-only-no-book-covers-taylor-swift-performs-onstage-during.jpg?s=1024x1024&w=gi&k=20&c=v23l3S0cB3R4FUz2v72urnuw_Rdwn07Fue0F8ovPTY0=" class="img-fluid w-100" alt="">
+                    </div>
+                    <div class="col-4 p-1"><img style="object-fit: cover; height: 30vw;" src="https://media.gettyimages.com/id/1785007425/es/foto/buenos-aires-argentina-editorial-use-only-no-book-covers-taylor-swift-performs-onstage-during.jpg?s=1024x1024&w=gi&k=20&c=RyeVPN2Ykv4UydbFWrj-1JM8hVz8Gj_oZjoNFRVEZwk=" class="img-fluid w-100" alt="">
+                    </div>
+                    <div class="col-4 p-1"><img style="object-fit: cover; height: 30vw;" src="https://media.gettyimages.com/id/1784872102/es/foto/buenos-aires-argentina-editorial-use-only-no-book-covers-fans-hold-signs-during-taylor-swift.jpg?s=1024x1024&w=gi&k=20&c=_BuOFM3Ucz1nspuqCS0syyzyyezg5F1Yrh-rQwOnBoQ=" class="img-fluid w-100" alt="">
+                    </div>
+                </div>
+            </div>
+            <!-- Posts -->
+            <div class="tab-pane fade justify-content-center" id="nav-profile" role="tabpanel"
+                aria-labelledby="nav-profile-tab" tabindex="0">
+
+                <div class="row my-4">
+                    <div class="col-6 mx-auto border rounded p-0">
+                        <div class="d-flex p-2">
+                            <div class="w-100 fs-4">Taylor Swift in Buenos Aires</div>
+                            <small class="align-bottom">11/09</small>
+                        </div>
+                        <img style="object-fit: cover;"
+                            src="https://media.gettyimages.com/id/1780329490/es/foto/buenos-aires-argentina-editorial-use-only-no-covers-taylor-swift-performs-onstage-during.jpg?s=1024x1024&w=gi&k=20&c=iQLf1DefCbPRmIkbb8ASnRj4fzk8ofB7Aobo_USAGF4=" class="img-fluid w-100 col-12" alt="" />
+                        <div class="p-2">
+                            <strong><i class="fa-solid fa-heart" style="color: #db2100;"></i> 1989 Likes</strong>
+                            <p><strong>taylornews</strong> Taylor performing 'august'.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row my-4">
+                    <div class="col-6 mx-auto border rounded p-0">
+                        <div class="d-flex p-2">
+                            <div class="w-100 fs-4">Ovation</div>
+                            <small>11/11</small>
+                        </div>
+                        <img style="object-fit: cover;" src="https://media.gettyimages.com/id/1788344633/es/foto/buenos-aires-argentina-editorial-use-only-no-book-covers-taylor-swift-performs-onstage-during.jpg?s=1024x1024&w=gi&k=20&c=0CCjZpwz3B2tPfJ6HI6jkUfLTqJSIZ0qBT_IouqMOoQ=" class="img-fluid w-100 col-12" alt=""/>
+                        <div class="p-2">
+                            <strong><i class="fa-solid fa-heart" style="color: #db2100;"></i> 269.850 Likes</strong>
+                            <p><strong>taylornews</strong> 5-minute ovation after hearing 'champagne problems'.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row my-4">
+                    <div class="col-6 mx-auto border rounded p-0">
+                        <div class="d-flex p-2">
+                            <div class="w-100 fs-4">The Eras Tour - Buenos Aires (Night 1)</div>
+                            <small>11/12</small>
+                        </div>
+                        <img style="object-fit: cover;" src="https://media.gettyimages.com/id/1784940768/es/foto/buenos-aires-argentina-editorial-use-only-no-book-covers-taylor-swift-performs-onstage-during.jpg?s=2048x2048&w=gi&k=20&c=8At96FSc8g-nbKt2VWQ2EBTXExOZcp1f3fVNKA02E9k=" class="img-fluid w-100 col-12" alt="" />
+                        <div class="p-2">
+                            <strong><i class="fa-solid fa-heart" style="color: #db2100;"></i> 204.228 Likes</strong>
+                            <p><strong>taylornews</strong> Taylor singing "Long Live" from her "Speak Now" album.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+
+</body>
+
+</html>
